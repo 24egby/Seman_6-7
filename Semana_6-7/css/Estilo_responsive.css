@@ -1,0 +1,247 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    max-height: 100%;
+
+}
+
+body {
+
+    font-family: Tahoma;
+    font-size: 18px;
+    background-image: url(../img/Fondo_Incap.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header {
+
+    background-color: lightsteelblue;
+    border: 2px solid blue;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row; /*Dispocosion Horizontal*/
+    justify-content: center; /*Horizontal*/
+    align-items: center;  /*Vertical*/
+    grid-area: header; /*Nombre asignado*/
+    
+}
+
+/* Barra Nav */
+
+ul {
+
+    padding: 0;
+    margin: 1px;
+}
+
+li {
+
+    display: inline;  /*Linea horizaontal*/
+    list-style: none;
+    margin: 0px 5px;
+    font: bold 12px verdana;
+}
+
+a {
+
+    text-decoration: none;
+    color: white;
+
+}
+
+/* Barra Navegacion */
+
+#menu {
+
+    grid-area: nav; /*Nombre asignado*/
+    background-color: blue;
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5pxs;
+    margin: 5px;
+
+}
+
+.buscarbox input{
+
+    height: 25px;
+    width: 0;
+    padding: 0;
+    border-radius: 40px;
+    border: 0;
+    padding-right: 50px ;
+    transition: 0.8s ease;
+
+}
+
+.buscarbox input:hover{
+
+    width: 150PX;
+    padding-left: 10px;
+    outline: none;
+}
+
+/* Maquetacion de Section */
+
+#main {
+
+    grid-area: main; /*Asignar area main*/
+    background-color: rgba(157, 157, 206, 0.808);
+    backdrop-filter: blur(5px);
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+
+    display: inline;
+    margin: 45px;
+    padding: 5px;
+}
+
+.programa {
+
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    width: 45%;
+    height: 200px;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 15px;
+    
+}
+
+#sidebar {
+
+    grid-area: sidebar; /*Asignar nombre de area*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(109, 109, 153);
+    backdrop-filter: blur(5px);
+}
+
+iframe {
+
+    max-width: 100%;
+    height: auto;
+}
+
+/* Maquetacion footer */
+
+#footer {
+
+    grid-area: footer; /*Asignar nombre de area*/
+    padding-top: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    clear: both;  /*Elimina elemtos flotantes*/
+    background-color:rgb(169, 194, 241);
+    backdrop-filter: blur(5px);
+}
+
+#reder a {
+
+    padding: 5px;
+    margin: 0;
+}
+
+#reder a i:hover {
+
+    transform: scale(1.5);
+}
+
+i[class^="fa"]{
+
+    color: gray;
+    font-size: 18px;
+    /* Busca etiquetas que inicien con el texto indicado */
+}
+
+i[class^="fab"]{
+
+    color: gray;
+    font-size: 30px;
+    border: 2px solid transparent;
+    margin: 0;
+}
+
+.fa-bars{
+
+    font-size: 30px !important;
+    color: black !important;
+}
+
+.openmenu {
+
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+/* **************************************************************************** */
+
+
+/* Definicion de plantillas con Css GRID */
+
+/* Vista PC */
+
+#grid-container{
+
+    text-align: center;
+    box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+}
+
+#grid-container{
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template: 
+        "header header header" 150px
+        "nav nav nav" 50px
+        "main main sidebar" 300px
+        "main main sidebar" 300px
+        "main main sidebar" 250px
+        "footer footer footer" 150px /
+        1000px 150px 100px;
+        
+}
+
+@media (max-width: 1024px) {
+    
+    #grid-container{
+        grid-template:
+        
+        "header" 170px
+        "nav main" 80px
+        "nav main" 70px
+        "sidebar sidebar" 650px
+        "footer footer" 100px
+        250px 450px;
+        font-size: 75%
+        ;
+    }
+
+    #menu {
+        background-color: blue;
+        border-radius: 22px;
+        display: block;
+        padding: 45px;
+        margin: 40px;
+        height: auto;
+        text-align: center;
+    }
+}
